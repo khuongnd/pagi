@@ -1,2 +1,2 @@
-# agi
+# pagi
 Python artificial general intelligence
