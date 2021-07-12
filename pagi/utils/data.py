@@ -16,12 +16,12 @@ def tf_normalize_features_and_labels(x, y):
     return x, y
 
 
-def tf_get_mnist_dataset():
+def tf_get_mnist_dataset(bath_size=100):
     '''
     Get tensorflow mnist dataset
     '''
     (x, y), _ = datasets.mnist.load_data()
     ds = tf.data.Dataset.from_tensor_slices((x, y))
     ds = ds.map(tf_normalize_features_and_labels)
-    ds = ds.batch(100)
+    ds = ds.batch(bath_size)
     return ds
