@@ -1,18 +1,20 @@
 from catboost import CatBoostClassifier
 
 
-def get_CatBoostClassifier(iterations=1000):
+def get_CatBoostClassifier(iterations=1000, min_data_in_leaf=30, cat_features=None):
     return CatBoostClassifier(
         iterations=iterations,
         learning_rate=0.01,
-        min_data_in_leaf=10,
-        eval_metric='AUC'
+        min_data_in_leaf=min_data_in_leaf,
+        eval_metric='AUC',
+        cat_features=cat_features
     )
 
 
 if __name__ == "__main__":
     from catboost.datasets import titanic
     import numpy as np
+
     train_df, test_df = titanic()
 
     train_df.head()
