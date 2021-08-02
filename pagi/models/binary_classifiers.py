@@ -38,8 +38,9 @@ if __name__ == "__main__":
         plot=True
     )
 
-    preds = model.predict_proba(X_test)[:, 1]
+    preds = model.predict_proba(X_validation)[:, 1]
 
     from pagi.utils.metrics import get_binary_classification_metrics
 
-    print(get_binary_classification_metrics(y_true, preds))
+    print(y_validation.values.shape, preds.shape)
+    print(get_binary_classification_metrics(y_validation.values.astype(np.float), preds))
