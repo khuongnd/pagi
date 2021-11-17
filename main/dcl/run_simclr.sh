@@ -11,14 +11,14 @@ BATCH_SIZE=128
 LOSS="dclw"
 TEMP=0.1
 
-python main/dcl/train.py \
+python -u main/dcl/train.py \
   --batch_size $BATCH_SIZE \
   --epochs 100 \
   --feature_dim 128 \
   --loss $LOSS \
   --temperature $TEMP
 
-python main/dcl/test.py \
+python -u main/dcl/test.py \
   --batch_size 64 \
   --epochs 100 \
   --model_path "results/128_${TEMP}_200_${BATCH_SIZE}_100_${LOSS}_model.pth"
