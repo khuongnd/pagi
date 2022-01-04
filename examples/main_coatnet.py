@@ -11,3 +11,4 @@ block_types=['C', 'T', 'T', 'T']        # 'C' for MBConv, 'T' for Transformer
 
 net = CoAtNet((224, 224), 3, num_blocks, channels, block_types=block_types)
 out = net(img)
+print(out)
