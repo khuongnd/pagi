@@ -1,4 +1,4 @@
-
+# https://github.com/lucidrains/vit-pytorch
 
 import torch
 from pagi.models.vits.vit import ViT
